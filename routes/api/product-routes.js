@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { response } = require('express');
 const { Product, Category, Tag, ProductTag } = require('../../models');
 
 // The `/api/products` endpoint
@@ -137,6 +138,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
+  res.send(`delete ${req.params.id}` );
 });
 
 module.exports = router;
